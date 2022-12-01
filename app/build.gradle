@@ -66,7 +66,8 @@ jacocoTestReport {
 }
 
 checkstyle {
-    toolVersion '9.2.1'
+    toolVersion '10.4'
+    configFile file("config/checkstyle/checkstyle.xml")
 }
 
 run {
