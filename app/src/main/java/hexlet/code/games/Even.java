@@ -3,7 +3,7 @@ package hexlet.code.games;
 import org.jetbrains.annotations.NotNull;
 
 public final class Even {
-    public static @NotNull String eog() {
+    public static @NotNull String parityCheck() {
         String result;
         final int numberRange = 100;
         int randomNumber = (int) (Math.random() * numberRange);

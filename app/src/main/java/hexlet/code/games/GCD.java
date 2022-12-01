@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class GCD {
 
-    public static int nodCh() {
+    public static int lookingCommonDivisor() {
         int firstRandomNumber;
         int secondRandomNumber;
         final int firstNumberRange = 101;

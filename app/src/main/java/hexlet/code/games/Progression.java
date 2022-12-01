@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 public class Progression {
-    public static int arProg() {
+    public static int outputProgression() {
         final int minLength = 5;
         final int maxLength = 11;
         int hiddenVar = 0;

@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public final class Calc {
     @SuppressWarnings("checkstyle:LineLength")
-    public static int cg() {
+    public static int calculateTwoNumber() {
         int result = 0;
         final int firstNumberRange = 100;
         final int secondNumberRange = 100;

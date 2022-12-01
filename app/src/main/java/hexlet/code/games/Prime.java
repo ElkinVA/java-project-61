@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Prime {
 
-    public static @NotNull String primeNum() {
+    public static @NotNull String checkIfNumberPrime() {
         String answerYesNo = "";
         final int range = 100;
         int number = (int) (Math.random() * range) + 2;
