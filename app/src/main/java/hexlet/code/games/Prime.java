@@ -13,7 +13,7 @@ public class Prime {
         } else {
             answerYesNo = "no";
         }
-        System.out.print("Answer 'yes' if given number is prime. Otherwise answer 'no'.\nQuestion: " + number);
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.\nQuestion: " + number);
         return answerYesNo;
     }
 
