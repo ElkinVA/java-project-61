@@ -1,8 +1,10 @@
 package hexlet.code.games;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Prime {
 
-    public static String primeNum() {
+    public static @NotNull String primeNum() {
         String answerYesNo = "";
         final int range = 100;
         int number = (int) (Math.random() * range) + 2;
