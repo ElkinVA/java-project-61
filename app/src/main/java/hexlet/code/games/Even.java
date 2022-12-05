@@ -2,9 +2,11 @@ package hexlet.code.games;
 
 import org.jetbrains.annotations.NotNull;
 
-import static jdk.vm.ci.code.CodeUtil.isEven;
-
 public final class Even {
+
+    public static Boolean isEven(int i) {
+        return (i % 2) == 0;
+    }
     public static @NotNull String parityCheck() {
         final int numberRange = 100;
         int randomNumber = (int) (Math.random() * numberRange);
