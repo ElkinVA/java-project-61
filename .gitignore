@@ -7,3 +7,5 @@ bin
 .classpath
 .idea/
 config
+out
+app.iml
