@@ -1,11 +1,6 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import static hexlet.code.games.Calc.calculateTwoNumber;
-import static hexlet.code.games.Even.parityCheck;
-import static hexlet.code.games.GCD.lookingCommonDivisor;
-import static hexlet.code.games.Prime.checkIfNumberPrime;
-import static hexlet.code.games.Progression.outputProgression;
 
 public class Engine {
 
@@ -17,25 +12,6 @@ public class Engine {
         System.out.print("May I have your name? ");
         userName = namescan.nextLine();
         System.out.println("Hello, " + userName + "!");
-    }
-
-    public static void getGame(String userChoice) {
-        greeting();
-        final int numberOfTests = 3;
-        for (int i = 0; i < numberOfTests; i++) {
-            switch (userChoice) {
-                case "2" -> answer(parityCheck());
-                case "3" -> answer(calculateTwoNumber());
-                case "4" -> answer(lookingCommonDivisor());
-                case "5" -> answer(outputProgression());
-                case "6" -> answer(checkIfNumberPrime());
-                default ->  System.out.println("People's! Choice!");
-            }
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
-                System.exit(0);
-            }
-        }
     }
 
     public static void answer(String userAnswer) {

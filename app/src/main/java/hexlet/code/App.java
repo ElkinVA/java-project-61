@@ -2,8 +2,12 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Engine.getGame;
-import static hexlet.code.Engine.greeting;
+import static hexlet.code.Cli.greet;
+import static hexlet.code.games.Calc.calculateTwoNumber;
+import static hexlet.code.games.Even.parityCheck;
+import static hexlet.code.games.GCD.lookingCommonDivisor;
+import static hexlet.code.games.Prime.checkIfNumberPrime;
+import static hexlet.code.games.Progression.outputProgression;
 
 public class App {
     public static void main(String[] args) {
@@ -21,12 +25,12 @@ public class App {
         Scanner choiceInput = new Scanner(System.in, "UTF-8");
         choice = choiceInput.nextLine();
         switch (choice) {
-            case "1" -> greeting();
-            case "2" -> getGame("2");
-            case "3" -> getGame("3");
-            case "4" -> getGame("4");
-            case "5" -> getGame("5");
-            case "6" -> getGame("6");
+            case "1" -> greet();
+            case "2" -> parityCheck();
+            case "3" -> calculateTwoNumber();
+            case "4" -> lookingCommonDivisor();
+            case "5" -> outputProgression();
+            case "6" -> checkIfNumberPrime();
             case "0" -> System.exit(0);
             default -> System.out.println("People's! Choice!");
         }

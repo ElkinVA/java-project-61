@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+
 import org.jetbrains.annotations.NotNull;
 
 public class Prime {
