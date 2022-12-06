@@ -36,7 +36,9 @@ public class Progression {
             String rightAnswer = gameArray[hiddenVarPosition];
             gameArray[hiddenVarPosition] = "..";
             j = 0;
+            String regex = "[\\[\\]|,]";
             String question = Arrays.toString(gameArray);
+            question = question.replaceAll(regex, "");
             answ[counter][j] = rightAnswer;
             j = 1;
             answ[counter][j] = question;
