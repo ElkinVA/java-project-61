@@ -28,8 +28,10 @@ public class Progression {
             randomStepArithmeticProgression = generateNumber(MIN, MAX_STEP);
             randomStartNumber = generateNumber(MIN, MAX);
             String[] gameArray = makeProgression(randomStartNumber, randomStepArithmeticProgression, randomArrayLength);
-           // String rightAnswer = "";
+            System.out.println("randomArrayLength: " + randomArrayLength + "\n hiddenVarPosition: " + hiddenVarPosition + "\nrandomStepArithmeticProgression: " + randomStepArithmeticProgression + "randomStartNumber" + randomStartNumber);
+            System.out.println("gameArray.lenght:" + gameArray.length);
             for (i = 0; i < randomArrayLength; i++) {
+                System.out.println("gameArray[i]:" + gameArray[i]);
                 gameArray[i] = String.valueOf(randomStartNumber + randomStepArithmeticProgression);
                 randomStartNumber = randomStartNumber + randomStepArithmeticProgression;
             }
@@ -42,6 +44,7 @@ public class Progression {
             answ[counter][j] = rightAnswer;
             j = 1;
             answ[counter][j] = question;
+            System.out.println(answ[counter][j]);
         }
         Engine.run(DESCRIPTION, answ);
     }
