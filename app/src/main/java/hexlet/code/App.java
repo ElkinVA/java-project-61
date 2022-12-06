@@ -32,7 +32,7 @@ public class App {
             case "5" -> outputProgression();
             case "6" -> checkIfNumberPrime();
             case "0" -> System.exit(0);
-            default -> System.out.println("People's! Choice!");
+            default -> throw new RuntimeException("Unknown operator: " + choice);
         }
     }
 }
