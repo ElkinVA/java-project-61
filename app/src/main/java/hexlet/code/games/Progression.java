@@ -21,7 +21,7 @@ public class Progression {
         int randomStepArithmeticProgression;
         //int i;
         int j;
-        String[][] answ = new String[3][2];
+        String[][] answ = new String[ROUNDS][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
             randomArrayLength = generateNumber(minLength, maxLength);
             System.out.println("randomArrayLength:" + randomArrayLength);

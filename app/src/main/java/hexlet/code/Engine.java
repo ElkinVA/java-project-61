@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int ROUNDS_COUNT = 3;
-    static String descCenter = "' is wrong answer ;(. Correct answer was '";
-    static String descRgh = "'.\nLet's try again,Let's try again, ";
+    private static final String DESC_CENTER = "' is wrong answer ;(. Correct answer was '";
+    private static final String DESC_RGH = "'.\nLet's try again,Let's try again, ";
 
     public static void run(String description, String[][] roundsData) {
         int j;
@@ -27,7 +27,7 @@ public class Engine {
             if (answ.equals(usAnsw)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + usAnsw + descCenter + answ + descRgh + usName + "!");
+                System.out.println("'" + usAnsw + DESC_CENTER + answ + DESC_RGH + usName + "!");
                 System.exit(0);
             }
         }

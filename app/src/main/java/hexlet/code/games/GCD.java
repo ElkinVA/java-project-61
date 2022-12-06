@@ -15,7 +15,7 @@ public class GCD {
         int firstRandomNumber;
         int secondRandomNumber;
         int j;
-        String[][] answ = new String[3][2];
+        String[][] answ = new String[ROUNDS][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
             firstRandomNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
             secondRandomNumber = generateNumber(MIN_RANGE, SECOND_RANGE);

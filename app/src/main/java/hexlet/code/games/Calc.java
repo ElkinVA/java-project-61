@@ -18,7 +18,7 @@ public final class Calc {
         String question;
         int j;
         int res;
-        String[][] answ = new String[3][2];
+        String[][] answ = new String[ROUNDS][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
             int firstNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
             int secondNumber = generateNumber(MIN_RANGE, SECOND_RANGE);

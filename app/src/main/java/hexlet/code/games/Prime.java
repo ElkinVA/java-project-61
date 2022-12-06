@@ -12,7 +12,7 @@ public class Prime {
     public static void checkIfNumberPrime() {
         String rightAnswer = "";
         int j;
-        String[][] answ = new String[3][2];
+        String[][] answ = new String[ROUNDS][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
             int number = generateNumber(MIN, MAX);
             rightAnswer = isPrime(number) ? "yes" : "no";
