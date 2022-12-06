@@ -25,7 +25,7 @@ public class Progression {
         for (int counter = 0; counter < ROUNDS; counter++) {
             randomArrayLength = generateNumber(minLength, maxLength);
             System.out.println("randomArrayLength:" + randomArrayLength);
-            hiddenVarPosition = generateNumber(MIN, randomArrayLength);
+            hiddenVarPosition = generateNumber(MIN, randomArrayLength - 1);
             System.out.println("hiddenVarPosition:" + hiddenVarPosition);
             randomStepArithmeticProgression = generateNumber(MIN, MAX_STEP);
             System.out.println("randomStepArithmeticProgression:" + randomStepArithmeticProgression);
