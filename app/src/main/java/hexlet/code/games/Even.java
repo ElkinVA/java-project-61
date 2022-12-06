@@ -1,18 +1,1 @@
-package hexlet.code.games;
-
-import org.jetbrains.annotations.NotNull;
-
-public final class Even {
-
-    public static Boolean isEven(int i) {
-        return (i % 2) == 0;
-    }
-    public static @NotNull String parityCheck() {
-        final int numberRange = 100;
-        int randomNumber = (int) (Math.random() * numberRange);
-        String result = isEven(randomNumber) ? "yes" : "no";
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.\nQuestion: " + randomNumber);
-        return result;
-    }
-}
-
+package hexlet.code.games;import hexlet.code.Engine;import static hexlet.code.Utils.generateNumber;public final class Even {    static final int MIN = 1;    static final int MAX = 100;    static final int ROUNDS = 3;    static final String DESC = "Answer 'yes' if the number is even, otherwise answer 'no'.";    public static boolean isEven(int i) {        return (i % 2) == 0;    }    public static void parityCheck() {        int j = 0;        String[][] answ = new String[3][2];        for (int counter = 0; counter < ROUNDS; counter++) {            int randomNumber = generateNumber(MIN, MAX);            String rightAnswer = isEven(randomNumber) ? "yes" : "no";            String question = String.valueOf(randomNumber);            answ[counter][j] = rightAnswer;            System.out.println(counter + " " + j + "-> " + answ[counter][j]);            j++;            answ[counter][j] = question;            System.out.println(counter + " " + j + "-> " + answ[counter][j]);            j = 0;        }        Engine.run(DESC, answ);    }}

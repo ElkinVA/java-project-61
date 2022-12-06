@@ -1,21 +1,28 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 
-import org.jetbrains.annotations.NotNull;
+import static hexlet.code.Utils.generateNumber;
 
 public class Prime {
-
-    public static @NotNull String checkIfNumberPrime() {
-        String answerYesNo = "";
-        final int range = 100;
-        int number = (int) (Math.random() * range) + 2;
-        if (isPrime(number)) {
-            answerYesNo = "yes";
-        } else {
-            answerYesNo = "no";
+    static final int MIN = 2;
+    static final int MAX = 100;
+    static final int ROUNDS = 3;
+    static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static void checkIfNumberPrime() {
+        String rightAnswer = "";
+        int j;
+        String[][] answ = new String[3][2];
+        for (int counter = 0; counter < ROUNDS; counter++) {
+            int number = generateNumber(MIN, MAX);
+            rightAnswer = isPrime(number) ? "yes" : "no";
+            j = 0;
+            String question = String.valueOf(number);
+            answ[counter][j] = rightAnswer;
+            j = 1;
+            answ[counter][j] = question;
         }
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.\nQuestion: " + number);
-        return answerYesNo;
+        Engine.run(DESCRIPTION, answ);
     }
 
     public static boolean isPrime(int number) {

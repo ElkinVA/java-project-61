@@ -1,47 +1,37 @@
 package hexlet.code;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Engine {
 
-    private static String userName;
+    public static final int ROUNDS_COUNT = 3;
+    static String descCenter = "' is wrong answer ;(. Correct answer was '";
+    static String descRgh = "'.\nLet's try again,Let's try again, ";
 
-    public static void greeting() {
+    public static void run(String description, String[][] roundsData) {
+        int j;
         System.out.println("\nWelcome to the Brain Games!");
-        Scanner namescan = new Scanner(System.in, "UTF-8");
+        Scanner namescan = new Scanner(System.in, StandardCharsets.UTF_8);
         System.out.print("May I have your name? ");
-        userName = namescan.nextLine();
-        System.out.println("Hello, " + userName + "!");
-    }
-
-    public static void answer(String userAnswer) {
-        String yesWrongMessage = "'yes' is wrong answer ;(. Correct answer was 'no'\nLet's try again, ";
-        String noWrongMessage = "'no' is wrong answer ;(. Correct answer was 'yes'\nLet's try again, ";
-        System.out.print("Your answer: ");
-        Scanner choicescan = new Scanner(System.in, "UTF-8");
-        String answer = choicescan.nextLine();
-        if (answer.equals(userAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            if (answer.equals("yes")) {
-                System.out.println(yesWrongMessage + userName + "!");
+        String usName = namescan.nextLine();
+        System.out.println("Hello, " + usName + "!");
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            j = 1;
+            System.out.println(description + "\nQuestion: " + roundsData[i][j]);
+            System.out.print("Your answer: ");
+            Scanner choicescan = new Scanner(System.in, StandardCharsets.UTF_8);
+            String usAnsw = choicescan.nextLine();
+            j = 0;
+            String answ = roundsData[i][j];
+            if (answ.equals(usAnsw)) {
+                System.out.println("Correct!");
             } else {
-                System.out.println(noWrongMessage + userName + "!");
+                System.out.println("'" + usAnsw + descCenter + answ + descRgh + usName + "!");
+                System.exit(0);
             }
-            System.exit(0);
         }
-    }
-
-    public static void answer(int userAnswer) {
-        System.out.print("Your answer: ");
-        Scanner choicescan = new Scanner(System.in, "UTF-8");
-        int answer = choicescan.nextInt();
-        if (answer == userAnswer) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                    + userAnswer + "'.\nLet's try again, " + userName + "!\n");
-            System.exit(0);
-        }
+        System.exit(0);
     }
 }
+

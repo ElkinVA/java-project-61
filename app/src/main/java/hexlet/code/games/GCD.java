@@ -1,32 +1,37 @@
 package hexlet.code.games;
 
-public class GCD {
+import hexlet.code.Engine;
 
-    public static int lookingCommonDivisor() {
+import static hexlet.code.Utils.generateNumber;
+
+public class GCD {
+    static final int MIN_RANGE = 1;
+    static final int FIRST_RANGE = 100;
+    static final int SECOND_RANGE = 100;
+    static final int ROUNDS = 3;
+    static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
+
+    public static void lookingCommonDivisor() {
         int firstRandomNumber;
         int secondRandomNumber;
-        final int firstNumberRange = 101;
-        final int secondNumberRange = 101;
-        String resultMessage = "Find the greatest common divisor of given numbers.\nQuestion: ";
         int j;
-        int i = 0;
-        firstRandomNumber = (int) (Math.random() * firstNumberRange);
-        secondRandomNumber = (int) (Math.random() * secondNumberRange);
-        System.out.println(resultMessage + firstRandomNumber + " " + secondRandomNumber);
-        if (firstRandomNumber >= secondRandomNumber) {
-            j = firstRandomNumber;
-        } else {
-            j = secondRandomNumber;
+        String[][] answ = new String[3][2];
+        for (int counter = 0; counter < ROUNDS; counter++) {
+            firstRandomNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
+            secondRandomNumber = generateNumber(MIN_RANGE, SECOND_RANGE);
+            String fn = String.valueOf(firstRandomNumber);
+            String sn = String.valueOf(secondRandomNumber);
+            String rightAnswer = fn + " " + sn;
+            int gcdCount = gcd(firstRandomNumber, secondRandomNumber);
+            String question = String.valueOf(gcdCount);
+            j = 0;
+            answ[counter][j] = question;
+            j++;
+            answ[counter][j] = rightAnswer;
         }
-        while (j > 0) {
-            if ((firstRandomNumber % j) == 0) {
-                if ((secondRandomNumber % j) == 0) {
-                    i = j;
-                    break;
-                }
-            }
-            j--;
-        }
-        return i;
+        Engine.run(DESCRIPTION, answ);
+    }
+    private static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }
