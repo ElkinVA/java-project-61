@@ -16,47 +16,48 @@ public final class Calc {
 
     public static void calculateTwoNumber() {
         String question;
-        int j;
-        int res;
+        int arrCounter1;
+        int arrCounter2 = 0;
+        int result;
         String[][] answ = new String[ROUNDS][2];
-        for (int counter = 0; counter < ROUNDS; counter++) {
+        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
             int firstNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
             int secondNumber = generateNumber(MIN_RANGE, SECOND_RANGE);
             int signRandomRange = generateNumber(MIN_RANGE, RANDOM_SIGN);
             char operator = OPERATORS[signRandomRange];
             switch (operator) {
                 case '+' -> {
-                    res = firstNumber + secondNumber;
-                    String rightAnswer = String.valueOf(res);
+                    result = firstNumber + secondNumber;
+                    String rightAnswer = String.valueOf(result);
                     String fn = String.valueOf(firstNumber);
                     String sn = String.valueOf(secondNumber);
                     question = fn + " + " + sn;
-                    j = 0;
-                    answ[counter][j] = rightAnswer;
-                    j++;
-                    answ[counter][j] = question;
+                    arrCounter2 = 0;
+                    answ[arrCounter1][arrCounter2] = rightAnswer;
+                    arrCounter2++;
+                    answ[arrCounter1][arrCounter2] = question;
                 }
                 case '-' -> {
-                    res = firstNumber - secondNumber;
-                    String rightAnswer = String.valueOf(res);
+                    result = firstNumber - secondNumber;
+                    String rightAnswer = String.valueOf(result);
                     String fn = String.valueOf(firstNumber);
                     String sn = String.valueOf(secondNumber);
                     question = fn + " - " + sn;
-                    j = 0;
-                    answ[counter][j] = rightAnswer;
-                    j++;
-                    answ[counter][j] = question;
+                    arrCounter2 = 0;
+                    answ[arrCounter1][arrCounter2] = rightAnswer;
+                    arrCounter2++;
+                    answ[arrCounter1][arrCounter2] = question;
                 }
                 case '*' -> {
-                    res = firstNumber * secondNumber;
-                    String rightAnswer = String.valueOf(res);
+                    result = firstNumber * secondNumber;
+                    String rightAnswer = String.valueOf(result);
                     String fn = String.valueOf(firstNumber);
                     String sn = String.valueOf(secondNumber);
                     question = fn + " * " + sn;
-                    j = 0;
-                    answ[counter][j] = rightAnswer;
-                    j++;
-                    answ[counter][j] = question;
+                    arrCounter2 = 0;
+                    answ[arrCounter1][arrCounter2] = rightAnswer;
+                    arrCounter2++;
+                    answ[arrCounter1][arrCounter2] = question;
                 }
                 default -> throw new RuntimeException("Unknown operator: " + operator);
             }

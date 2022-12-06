@@ -1,7 +1,7 @@
 package hexlet.code;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-
 import static hexlet.code.Cli.greet;
 import static hexlet.code.games.Calc.calculateTwoNumber;
 import static hexlet.code.games.Even.parityCheck;
@@ -11,7 +11,6 @@ import static hexlet.code.games.Progression.outputProgression;
 
 public class App {
     public static void main(String[] args) {
-        String choice;
         System.out.print("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -22,8 +21,8 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        Scanner choiceInput = new Scanner(System.in, "UTF-8");
-        choice = choiceInput.nextLine();
+        Scanner choiceInput = new Scanner(System.in, StandardCharsets.UTF_8);
+        String choice = choiceInput.nextLine();
         switch (choice) {
             case "1" -> greet();
             case "2" -> parityCheck();

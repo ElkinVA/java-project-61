@@ -11,16 +11,17 @@ public class Prime {
     static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void checkIfNumberPrime() {
         String rightAnswer = "";
-        int j;
+        int arrCounter1;
+        int arrCounter2;
         String[][] answ = new String[ROUNDS][2];
-        for (int counter = 0; counter < ROUNDS; counter++) {
+        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
             int number = generateNumber(MIN, MAX);
             rightAnswer = isPrime(number) ? "yes" : "no";
-            j = 0;
+            arrCounter2 = 0;
             String question = String.valueOf(number);
-            answ[counter][j] = rightAnswer;
-            j = 1;
-            answ[counter][j] = question;
+            answ[arrCounter1][arrCounter2] = rightAnswer;
+            arrCounter2 = 1;
+            answ[arrCounter1][arrCounter2] = question;
         }
         Engine.run(DESCRIPTION, answ);
     }

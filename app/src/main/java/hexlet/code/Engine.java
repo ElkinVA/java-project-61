@@ -10,20 +10,21 @@ public class Engine {
     private static final String DESC_RGH = "'.\nLet's try again,Let's try again, ";
 
     public static void run(String description, String[][] roundsData) {
-        int j;
+        int arrCounter1;
+        int arrCounter2;
         System.out.println("\nWelcome to the Brain Games!");
-        Scanner namescan = new Scanner(System.in, StandardCharsets.UTF_8);
+        Scanner nameScan = new Scanner(System.in, StandardCharsets.UTF_8);
         System.out.print("May I have your name? ");
-        String usName = namescan.nextLine();
+        String usName = nameScan.nextLine();
         System.out.println("Hello, " + usName + "!");
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            j = 1;
-            System.out.println(description + "\nQuestion: " + roundsData[i][j]);
+        for (arrCounter1 = 0; arrCounter1 < ROUNDS_COUNT; arrCounter1++) {
+            arrCounter2 = 1;
+            System.out.println(description + "\nQuestion: " + roundsData[arrCounter1][arrCounter2]);
             System.out.print("Your answer: ");
             Scanner choicescan = new Scanner(System.in, StandardCharsets.UTF_8);
             String usAnsw = choicescan.nextLine();
-            j = 0;
-            String answ = roundsData[i][j];
+            arrCounter2 = 0;
+            String answ = roundsData[arrCounter1][arrCounter2];
             if (answ.equals(usAnsw)) {
                 System.out.println("Correct!");
             } else {

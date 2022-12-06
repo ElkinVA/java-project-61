@@ -14,9 +14,10 @@ public class GCD {
     public static void lookingCommonDivisor() {
         int firstRandomNumber;
         int secondRandomNumber;
-        int j;
+        int arrCounter1;
+        int arrCounter2 = 0;
         String[][] answ = new String[ROUNDS][2];
-        for (int counter = 0; counter < ROUNDS; counter++) {
+        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
             firstRandomNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
             secondRandomNumber = generateNumber(MIN_RANGE, SECOND_RANGE);
             String fn = String.valueOf(firstRandomNumber);
@@ -24,10 +25,10 @@ public class GCD {
             String rightAnswer = fn + " " + sn;
             int gcdCount = gcd(firstRandomNumber, secondRandomNumber);
             String question = String.valueOf(gcdCount);
-            j = 0;
-            answ[counter][j] = question;
-            j++;
-            answ[counter][j] = rightAnswer;
+            arrCounter2 = 0;
+            answ[arrCounter1][arrCounter2] = question;
+            arrCounter2++;
+            answ[arrCounter1][arrCounter2] = rightAnswer;
         }
         Engine.run(DESCRIPTION, answ);
     }
