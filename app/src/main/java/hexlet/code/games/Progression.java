@@ -19,7 +19,7 @@ public class Progression {
         int randomArrayLength;
         int randomStartNumber;
         int randomStepArithmeticProgression;
-        int i;
+        //int i;
         int j;
         String[][] answ = new String[3][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
@@ -28,13 +28,12 @@ public class Progression {
             randomStepArithmeticProgression = generateNumber(MIN, MAX_STEP);
             randomStartNumber = generateNumber(MIN, MAX);
             String[] gameArray = makeProgression(randomStartNumber, randomStepArithmeticProgression, randomArrayLength);
-            System.out.println("randomArrayLength: " + randomArrayLength + "\n hiddenVarPosition: " + hiddenVarPosition + "\nrandomStepArithmeticProgression: " + randomStepArithmeticProgression + "randomStartNumber" + randomStartNumber);
-            System.out.println("gameArray.lenght:" + gameArray.length);
-            for (i = 0; i < randomArrayLength; i++) {
+        //    System.out.println("gameArray.lenght:" + gameArray.length);
+            /*for (i = 0; i < randomArrayLength; i++) {
                 System.out.println("gameArray[i]:" + gameArray[i]);
                 gameArray[i] = String.valueOf(randomStartNumber + randomStepArithmeticProgression);
                 randomStartNumber = randomStartNumber + randomStepArithmeticProgression;
-            }
+            }*/
             String rightAnswer = gameArray[hiddenVarPosition];
             gameArray[hiddenVarPosition] = "..";
             j = 0;
@@ -44,7 +43,7 @@ public class Progression {
             answ[counter][j] = rightAnswer;
             j = 1;
             answ[counter][j] = question;
-            System.out.println(answ[counter][j]);
+        //    System.out.println(answ[counter][j]);
         }
         Engine.run(DESCRIPTION, answ);
     }
