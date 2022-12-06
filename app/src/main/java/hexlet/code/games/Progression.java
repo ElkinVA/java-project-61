@@ -13,8 +13,8 @@ public class Progression {
     static final int MAX = 30;
     static final String DESCRIPTION = "What number is missing in the progression?";
     public static void outputProgression() {
-        final int minLength = 5;
-        final int maxLength = 11;
+        final int minLength = 6;
+        final int maxLength = 10;
         int hiddenVarPosition;
         int randomArrayLength;
         int randomStartNumber;
@@ -24,7 +24,7 @@ public class Progression {
         String[][] answ = new String[3][2];
         for (int counter = 0; counter < ROUNDS; counter++) {
             randomArrayLength = generateNumber(minLength, maxLength);
-            hiddenVarPosition = generateNumber(MIN, minLength);
+            hiddenVarPosition = generateNumber(MIN, maxLength - 2);
             randomStepArithmeticProgression = generateNumber(MIN, MAX_STEP);
             randomStartNumber = generateNumber(MIN, MAX);
             String[] gameArray = makeProgression(randomStartNumber, randomStepArithmeticProgression, randomArrayLength);
