@@ -15,7 +15,7 @@ public final class Calc {
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstNumber = generateNumber(MIN_RANGE, RANGE);
             int secondNumber = generateNumber(MIN_RANGE, RANGE);
-            int signRandomRange = generateNumber(MIN_RANGE, OPERATORS.length);
+            int signRandomRange = generateNumber(MIN_RANGE, OPERATORS.length - 1);
             char operator = OPERATORS[signRandomRange];
             String rightAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));
             String fn = String.valueOf(firstNumber);
