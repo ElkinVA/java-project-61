@@ -18,8 +18,8 @@ public final class GCD {
             secondRandomNumber = generateNumber(MIN_RANGE, RANGE);
             String fn = String.valueOf(firstRandomNumber);
             String sn = String.valueOf(secondRandomNumber);
-            String rightAnswer = fn + " " + sn;
-            String question = Integer.toString(gcd(firstRandomNumber, secondRandomNumber));
+            String  question = fn + " " + sn;
+            String rightAnswer = Integer.toString(gcd(firstRandomNumber, secondRandomNumber));
             gameData[i] = new String[] {question, rightAnswer};
         }
         Engine.run(DESCRIPTION, gameData);
