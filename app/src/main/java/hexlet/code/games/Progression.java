@@ -9,7 +9,6 @@ import static hexlet.code.Utils.generateNumber;
 public class Progression {
     static final int MIN_LENGTH = 6;
     static final int MAX_LENGTH = 10;
-    static final int ROUNDS = 3;
     static final int MIN = 1;
     static final int MAX_STEP = 10;
     static final int MAX = 30;
@@ -21,8 +20,8 @@ public class Progression {
         int randomStepArithmeticProgression;
         int arrCounter1;
         int arrCounter2;
-        String[][] answ = new String[ROUNDS][2];
-        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
+        String[][] answ = new String[Engine.ROUNDS][2];
+        for (arrCounter1 = 0; arrCounter1 < Engine.ROUNDS; arrCounter1++) {
             randomArrayLength = generateNumber(MIN_LENGTH, MAX_LENGTH);
             hiddenVarPosition = generateNumber(MIN, randomArrayLength - 1);
             randomStepArithmeticProgression = generateNumber(MIN, MAX_STEP);

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static final int ROUNDS_COUNT = 3;
+    public static final int ROUNDS = 3;
     private static final String DESC_CENTER = "' is wrong answer ;(. Correct answer was '";
     private static final String DESC_RGH = "'.\nLet's try again,Let's try again, ";
 
@@ -17,7 +17,7 @@ public class Engine {
         System.out.print("May I have your name? ");
         String usName = nameScan.nextLine();
         System.out.println("Hello, " + usName + "!");
-        for (arrCounter1 = 0; arrCounter1 < ROUNDS_COUNT; arrCounter1++) {
+        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
             arrCounter2 = 1;
             System.out.println(description + "\nQuestion: " + roundsData[arrCounter1][arrCounter2]);
             System.out.print("Your answer: ");

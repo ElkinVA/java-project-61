@@ -7,14 +7,13 @@ import static hexlet.code.Utils.generateNumber;
 public class Prime {
     static final int MIN = 2;
     static final int MAX = 100;
-    static final int ROUNDS = 3;
     static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void checkIfNumberPrime() {
         String rightAnswer = "";
         int arrCounter1;
         int arrCounter2;
-        String[][] answ = new String[ROUNDS][2];
-        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
+        String[][] answ = new String[Engine.ROUNDS][2];
+        for (arrCounter1 = 0; arrCounter1 < Engine.ROUNDS; arrCounter1++) {
             int number = generateNumber(MIN, MAX);
             rightAnswer = isPrime(number) ? "yes" : "no";
             arrCounter2 = 0;

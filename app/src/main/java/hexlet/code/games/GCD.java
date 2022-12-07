@@ -8,7 +8,6 @@ public class GCD {
     static final int MIN_RANGE = 1;
     static final int FIRST_RANGE = 100;
     static final int SECOND_RANGE = 100;
-    static final int ROUNDS = 3;
     static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void lookingCommonDivisor() {
@@ -16,8 +15,8 @@ public class GCD {
         int secondRandomNumber;
         int arrCounter1;
         int arrCounter2 = 0;
-        String[][] answ = new String[ROUNDS][2];
-        for (arrCounter1 = 0; arrCounter1 < ROUNDS; arrCounter1++) {
+        String[][] answ = new String[Engine.ROUNDS][2];
+        for (arrCounter1 = 0; arrCounter1 < Engine.ROUNDS; arrCounter1++) {
             firstRandomNumber = generateNumber(MIN_RANGE, FIRST_RANGE);
             secondRandomNumber = generateNumber(MIN_RANGE, SECOND_RANGE);
             String fn = String.valueOf(firstRandomNumber);
