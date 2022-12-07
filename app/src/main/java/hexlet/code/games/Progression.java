@@ -23,7 +23,6 @@ public final class Progression {
             String rightAnswer = progression[hiddenIndex];
             progression[hiddenIndex] = "..";
             String question = String.join(" ", progression);
-
             gameData[i] = new String[] {question, rightAnswer};
         }
         Engine.run(DESCRIPTION, gameData);
