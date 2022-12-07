@@ -1,11 +1,9 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import static hexlet.code.Utils.generateNumber;
 
 public final class Calc {
-
     private static final char[] OPERATORS = {'+', '-', '*'};
     private static final String DESCRIPTION = "What is the result of the expression?";
     static final int MIN_RANGE = 0;
@@ -13,7 +11,7 @@ public final class Calc {
 
     public static void calculateTwoNumber() {
         String question;
-        String[][] answ = new String[Engine.ROUNDS][2];
+        String[][] gameData = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstNumber = generateNumber(MIN_RANGE, RANGE);
             int secondNumber = generateNumber(MIN_RANGE, RANGE);
@@ -24,21 +22,17 @@ public final class Calc {
             String sn = String.valueOf(secondNumber);
             String op = String.valueOf(operator);
             question = fn + " " + op + " " + sn;
-            answ[i] = new String[] {question, rightAnswer};
+            gameData[i] = new String[] {question, rightAnswer};
         }
-        Engine.run(DESCRIPTION, answ);
+        Engine.run(DESCRIPTION, gameData);
     }
 
     private static int calculate(char operator, int number1, int number2) {
-        switch (operator) {
-            case '+':
-                return number1 + number2;
-            case '-':
-                return number1 - number2;
-            case '*':
-                return number1 * number2;
-            default:
-                throw new RuntimeException("Unknown operator: " + operator);
-        }
+        return switch (operator) {
+            case '+' -> number1 + number2;
+            case '-' -> number1 - number2;
+            case '*' -> number1 * number2;
+            default -> throw new RuntimeException("Unknown operator: " + operator);
+        };
     }
 }

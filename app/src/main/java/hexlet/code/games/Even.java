@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import static hexlet.code.Utils.generateNumber;
 
 public final class Even {
@@ -11,19 +10,16 @@ public final class Even {
     public static boolean isEven(int i) {
         return (i % 2) == 0;
     }
+
     public static void parityCheck() {
-        int arrCounter1;
-        int arrCounter2 = 0;
-        String[][] answ = new String[Engine.ROUNDS][2];
-        for (arrCounter1 = 0; arrCounter1 < Engine.ROUNDS; arrCounter1++) {
+        int i;
+        String[][] gameData = new String[Engine.ROUNDS][2];
+        for (i = 0; i < Engine.ROUNDS; i++) {
             int randomNumber = generateNumber(MIN, MAX);
             String rightAnswer = isEven(randomNumber) ? "yes" : "no";
             String question = String.valueOf(randomNumber);
-            answ[arrCounter1][arrCounter2] = rightAnswer;
-            arrCounter2++;
-            answ[arrCounter1][arrCounter2] = question;
-            arrCounter2 = 0;
+            gameData[i] = new String[] {question, rightAnswer};
         }
-        Engine.run(DESC, answ);
+        Engine.run(DESC, gameData);
     }
 }
